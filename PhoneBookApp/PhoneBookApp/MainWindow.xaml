@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhoneBookApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Width="500" Height="800">
+        Title="Phone Book" Height="700" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
 
+        <Grid>
+            <DataGrid>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Visibility="Hidden"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Full Name" Width="1*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Phone No." Width="1*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Birth Date" Width="1*"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Add"/>
+            <Button Grid.Column="1" Content="Edit"/>
+            <Button Grid.Column="2" Content="Delete"/>
+        </Grid>
     </Grid>
 </Window>
