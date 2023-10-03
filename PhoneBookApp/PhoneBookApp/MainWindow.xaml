@@ -13,12 +13,12 @@
         </Grid.RowDefinitions>
 
         <Grid>
-            <DataGrid x:Name="DataList">
+            <DataGrid Name="DataList" ItemsSource="{ Binding }" AutoGenerateColumns="False" CanUserAddRows="false">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Visibility="Hidden"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Full Name" Width="1*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Phone No." Width="1*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Birth Date" Width="1*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="ID" Visibility="Hidden" Binding="{Binding ID}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Full Name" Width="1*" Binding="{Binding FullName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Phone No." Width="1*" Binding="{Binding PhoneNo}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Birth Date" Width="1*" Binding="{Binding BirthDate}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

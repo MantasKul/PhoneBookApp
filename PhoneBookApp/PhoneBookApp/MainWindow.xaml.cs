@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,27 +30,25 @@ namespace PhoneBookApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-/*            string ConString = ConfigurationManager.ConnectionStrings["PlacementInvoices"].ConnectionString;
-            string CmdString = string.Empty;
-
-            CmdString = "exec ssrs_DHAutomationLog '" + SelectedDate.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) + "'";
+            string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
+            //string storedProcedure = @"dbo.[SelectEverything]";
 
             try
             {
-                using (SqlConnection con = new SqlConnection(ConString))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand(CmdString, con);
+                    SqlCommand cmd = new SqlCommand("SelectEverything", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable("Invoices");
+                    DataTable dt = new DataTable();
                     sda.Fill(dt);
-                    PermInvoices.ItemsSource = dt.DefaultView;
+                    DataList.ItemsSource = dt.DefaultView;
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }*/
+            }
         }
     }
 }
