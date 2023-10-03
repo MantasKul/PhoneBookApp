@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:PhoneBookApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

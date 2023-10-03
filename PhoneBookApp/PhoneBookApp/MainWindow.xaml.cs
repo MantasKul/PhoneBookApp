@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,31 @@ namespace PhoneBookApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+/*            string ConString = ConfigurationManager.ConnectionStrings["PlacementInvoices"].ConnectionString;
+            string CmdString = string.Empty;
+
+            CmdString = "exec ssrs_DHAutomationLog '" + SelectedDate.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) + "'";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ConString))
+                {
+                    SqlCommand cmd = new SqlCommand(CmdString, con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable("Invoices");
+                    sda.Fill(dt);
+                    PermInvoices.ItemsSource = dt.DefaultView;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }*/
         }
     }
 }

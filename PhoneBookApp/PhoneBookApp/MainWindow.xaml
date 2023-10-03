@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhoneBookApp"
         mc:Ignorable="d"
-        Title="Phone Book" Height="700" Width="500">
+        Title="Phone Book" Height="700" Width="500" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Grid>
-            <DataGrid>
+            <DataGrid x:Name="DataList">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Visibility="Hidden"></DataGridTextColumn>
                     <DataGridTextColumn Header="Full Name" Width="1*"></DataGridTextColumn>
