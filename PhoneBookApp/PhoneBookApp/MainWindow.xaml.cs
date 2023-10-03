@@ -50,5 +50,35 @@ namespace PhoneBookApp
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataList.SelectedIndex != -1)
+            {
+                DataRowView dataRow = (DataRowView)DataList.SelectedItem;
+                int cellValue = (int)dataRow.Row.ItemArray[0];
+
+                string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
+
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        SqlCommand cmd = new SqlCommand("DeleteRowByID", con);
+                        SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                        sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        sda.SelectCommand.Parameters.Add("@ID", SqlDbType.Int).Value = cellValue;
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        DataList.ItemsSource = dt.DefaultView;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
     }
 }

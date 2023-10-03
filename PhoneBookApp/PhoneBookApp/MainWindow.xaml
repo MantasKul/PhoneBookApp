@@ -32,7 +32,7 @@
 
             <Button Grid.Column="0" Content="Add"/>
             <Button Grid.Column="1" Content="Edit"/>
-            <Button Grid.Column="2" Content="Delete"/>
+            <Button Grid.Column="2" Content="Delete" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Window>
