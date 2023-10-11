@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhoneBookApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -26,9 +27,11 @@ namespace PhoneBookApp
         public MainWindow()
         {
             InitializeComponent();
+            MainViewModel mainViewModel = new MainViewModel();
+            this.DataContext = mainViewModel;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+/*        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
             //string storedProcedure = @"dbo.[SelectEverything]";
@@ -81,6 +84,6 @@ namespace PhoneBookApp
                     MessageBox.Show(ex.ToString());
                 }
             }
-        }
+        }*/
     }
 }

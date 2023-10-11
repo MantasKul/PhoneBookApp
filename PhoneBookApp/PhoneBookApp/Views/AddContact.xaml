@@ -13,24 +13,24 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock HorizontalAlignment="Left" Margin="44,25,0,0" TextWrapping="Wrap" Text="Full Name" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="140,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
+        <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Margin="140,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
         
         <TextBlock HorizontalAlignment="Left" Margin="44,27,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Phone No." VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="140,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding PhoneNo}" HorizontalAlignment="Left" Margin="140,25,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="44,29,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Birth Date" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="140,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+        <DatePicker HorizontalAlignment="Left" Margin="140,0,0,0" Grid.Row="2" VerticalAlignment="Center" SelectedDate="{Binding BirthDate}"/>
 
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            
-            <Button Grid.Column="0" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-            <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+
+            <Button Grid.Column="0" Content="Add" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Command="{Binding AddContactCommand}"/>
+            <Button Grid.Column="1" Content="Cancel" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 </Window>

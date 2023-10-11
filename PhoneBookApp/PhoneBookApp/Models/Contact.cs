@@ -13,6 +13,6 @@ namespace PhoneBookApp.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string PhoneNo { get; set; }
-        public DateOnly BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
     }
 }

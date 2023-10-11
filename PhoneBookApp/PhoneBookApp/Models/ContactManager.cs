@@ -12,9 +12,9 @@ namespace PhoneBookApp.Models
         // Query this from database
         public static ObservableCollection<Contact> Contacts { get; set; } = new ObservableCollection<Contact>()
         {
-            new Contact{ ID = 0, Name = "Bob", PhoneNo = "123", BirthDate = new DateOnly(2010, 01, 01)},
-            new Contact{ ID = 1, Name = "Two", PhoneNo = "123", BirthDate = new DateOnly(2010, 01, 01)},
-            new Contact{ ID = 2, Name = "Third", PhoneNo = "123", BirthDate = new DateOnly(2010, 01, 01)}
+            new Contact{ ID = 0, Name = "Bob", PhoneNo = "123", BirthDate = new DateTime(2010, 01, 01)},
+            new Contact{ ID = 1, Name = "Two", PhoneNo = "1234", BirthDate = new DateTime(2010, 01, 01)},
+            new Contact{ ID = 2, Name = "Third", PhoneNo = "1235", BirthDate = new DateTime(2010, 01, 01)}
         };
 
         public static ObservableCollection<Contact> GetContacts()

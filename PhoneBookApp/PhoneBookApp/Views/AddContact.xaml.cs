@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhoneBookApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace PhoneBookApp.Views
         public AddContact()
         {
             InitializeComponent();
+            AddContactViewModel addContactViewModel = new AddContactViewModel();
+            this.DataContext = addContactViewModel;
         }
     }
 }

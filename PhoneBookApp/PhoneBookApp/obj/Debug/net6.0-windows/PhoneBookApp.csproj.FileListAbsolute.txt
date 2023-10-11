@@ -27,3 +27,5 @@ C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\bin\Debug\
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\PhoneBookApp.csproj.CopyComplete
+C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\Views\AddContact.g.cs
+C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\Views\AddContact.baml
