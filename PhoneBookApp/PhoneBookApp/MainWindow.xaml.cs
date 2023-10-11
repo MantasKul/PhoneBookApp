@@ -69,8 +69,10 @@ namespace PhoneBookApp
                         sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                         sda.SelectCommand.Parameters.Add("@ID", SqlDbType.Int).Value = cellValue;
                         DataTable dt = new DataTable();
-                        sda.Fill(dt);
                         DataList.ItemsSource = dt.DefaultView;
+                        sda.Fill(dt);
+                        
+                        sda.Update(dt);
                     }
 
                 }
