@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\App.xaml
-11407045341
+2935577002
 
-8-1117120269
+10-1307886566
 195351875588
-MainWindow.xaml;
+MainWindow.xaml;Views\AddContact.xaml;
 
-False
+True
 

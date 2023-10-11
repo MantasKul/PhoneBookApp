@@ -17,7 +17,7 @@ namespace PhoneBookApp.Models
             new Contact{ ID = 2, Name = "Third", PhoneNo = "123", BirthDate = new DateOnly(2010, 01, 01)}
         };
 
-        public static ObservableCollection<Contact> GetContact()
+        public static ObservableCollection<Contact> GetContacts()
         {
             return Contacts;
         }
