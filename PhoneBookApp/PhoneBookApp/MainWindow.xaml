@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <DataGrid ItemsSource="{Binding Contacts}" Name="DataList" AutoGenerateColumns="False" CanUserAddRows="false">
+            <DataGrid ItemsSource="{Binding contacts}" Name="DataList" AutoGenerateColumns="False" CanUserAddRows="false">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Visibility="Hidden" Binding="{Binding ID}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Full Name" Width="1*" Binding="{Binding Name}"></DataGridTextColumn>
@@ -30,7 +30,8 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="Add" Command="{Binding ShowWindowCommand}"/>
+            <Button Grid.Column="0" Content="Add" />
+            <!--="{Binding ShowWindowCommand}"-->
             <Button Grid.Column="1" Content="Edit"/>
             <Button Grid.Column="2" Content="Delete"/>
         </Grid>

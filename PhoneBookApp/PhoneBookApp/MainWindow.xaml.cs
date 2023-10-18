@@ -27,63 +27,66 @@ namespace PhoneBookApp
         public MainWindow()
         {
             InitializeComponent();
-            MainViewModel mainViewModel = new MainViewModel();
-            this.DataContext = mainViewModel;
+/*            MainViewModel mainViewModel = new MainViewModel();
+            this.DataContext = mainViewModel;*/
+            ContactsViewModel viewModel = new ContactsViewModel();
+            this.DataContext = viewModel;
         }
 
-/*        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
-            //string storedProcedure = @"dbo.[SelectEverything]";
 
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
+        /*        private void Window_Loaded(object sender, RoutedEventArgs e)
                 {
-                    SqlCommand cmd = new SqlCommand("SelectEverything", con);
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    DataList.ItemsSource = dt.DefaultView;
-                }
+                    string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
+                    //string storedProcedure = @"dbo.[SelectEverything]";
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataList.SelectedIndex != -1)
-            {
-                DataRowView dataRow = (DataRowView)DataList.SelectedItem;
-                int cellValue = (int)dataRow.Row.ItemArray[0];
-
-                string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
-
-                try
-                {
-                    using (SqlConnection con = new SqlConnection(connectionString))
+                    try
                     {
-                        SqlCommand cmd = new SqlCommand("DeleteRowByID", con);
-                        SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                        sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        sda.SelectCommand.Parameters.Add("@ID", SqlDbType.Int).Value = cellValue;
-                        DataTable dt = new DataTable();
-                        DataList.ItemsSource = dt.DefaultView;
-                        sda.Fill(dt);
-                        
-                        sda.Update(dt);
-                    }
+                        using (SqlConnection con = new SqlConnection(connectionString))
+                        {
+                            SqlCommand cmd = new SqlCommand("SelectEverything", con);
+                            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                            DataTable dt = new DataTable();
+                            sda.Fill(dt);
+                            DataList.ItemsSource = dt.DefaultView;
+                        }
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+
+                private void Button_Click(object sender, RoutedEventArgs e)
                 {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-        }*/
+                    if (DataList.SelectedIndex != -1)
+                    {
+                        DataRowView dataRow = (DataRowView)DataList.SelectedItem;
+                        int cellValue = (int)dataRow.Row.ItemArray[0];
+
+                        string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
+
+                        try
+                        {
+                            using (SqlConnection con = new SqlConnection(connectionString))
+                            {
+                                SqlCommand cmd = new SqlCommand("DeleteRowByID", con);
+                                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                sda.SelectCommand.Parameters.Add("@ID", SqlDbType.Int).Value = cellValue;
+                                DataTable dt = new DataTable();
+                                DataList.ItemsSource = dt.DefaultView;
+                                sda.Fill(dt);
+
+                                sda.Update(dt);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                }*/
     }
 }

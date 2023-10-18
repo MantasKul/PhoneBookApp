@@ -10,7 +10,7 @@ namespace PhoneBookApp.Models
     public class ContactManager
     {
         // Query this from database
-        public static ObservableCollection<Contact> Contacts { get; set; } = new ObservableCollection<Contact>()
+        private static ObservableCollection<Contact> Contacts { get; set; } = new ObservableCollection<Contact>()
         {
             new Contact{ ID = 0, Name = "Bob", PhoneNo = "123", BirthDate = new DateTime(2010, 01, 01)},
             new Contact{ ID = 1, Name = "Two", PhoneNo = "1234", BirthDate = new DateTime(2010, 01, 01)},
