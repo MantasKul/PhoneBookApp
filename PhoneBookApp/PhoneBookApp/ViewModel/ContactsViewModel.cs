@@ -36,7 +36,7 @@ namespace PhoneBookApp.ViewModel
             {
                 con = new SqlConnection(connectionString);
                 con.Open();
-                cmd = new SqlCommand("select * from PhoneBook", con);
+                cmd = new SqlCommand("SelectEverything", con);
                 adapter = new SqlDataAdapter(cmd);
                 ds = new DataSet();
                 adapter.Fill(ds, "PhoneBook");
