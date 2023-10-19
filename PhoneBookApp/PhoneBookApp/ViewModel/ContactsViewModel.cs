@@ -20,9 +20,10 @@ namespace PhoneBookApp.ViewModel
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;
-        DataSet ds;
+        DataSet? ds;
 
         public ObservableCollection<Contact> contacts { get; set; }
+        public Contact selectedContact { get; set; }
         public string txtSelectedItem { get; set; }
 
         public ContactsViewModel()
@@ -30,7 +31,7 @@ namespace PhoneBookApp.ViewModel
             FillList();
         }
 
-        public void FillList()
+        private void FillList()
         {
             try
             {
@@ -58,6 +59,34 @@ namespace PhoneBookApp.ViewModel
                 con.Close();
                 con.Dispose();
             }
+        }
+
+        public void DeleteEntry()
+        {
+            // Reoving row from Database
+            try
+            {
+                con = new SqlConnection(connectionString);
+                con.Open();
+
+                cmd = new SqlCommand("DeleteRowByID", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = selectedContact.ID;
+                cmd.ExecuteNonQuery();
+            } catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                ds = null;
+                adapter.Dispose();
+                con.Close();
+                con.Dispose();
+            }
+
+            // Removing row from the data grid
+            contacts.Remove(contacts.Where(i => i.ID == selectedContact.ID).Single());
         }
 
         #region INotifyPropertyChanged Members
