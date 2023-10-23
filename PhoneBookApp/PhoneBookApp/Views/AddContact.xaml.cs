@@ -23,8 +23,8 @@ namespace PhoneBookApp.Views
         public AddContact()
         {
             InitializeComponent();
-            AddContactViewModel addContactViewModel = new AddContactViewModel();
-            this.DataContext = addContactViewModel;
+/*            AddContactViewModel addContactViewModel = new AddContactViewModel();
+            this.DataContext = addContactViewModel;*/
         }
     }
 }

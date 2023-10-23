@@ -24,23 +24,30 @@ namespace PhoneBookApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ContactsViewModel viewModel;
+        private MainViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
 /*            MainViewModel mainViewModel = new MainViewModel();
             this.DataContext = mainViewModel;*/
-            viewModel = new ContactsViewModel();
-            this.DataContext = viewModel;
+/*            viewModel = new ContactsViewModel();
+            this.DataContext = viewModel;*/
+            viewModel = new MainViewModel();
+            DataContext = viewModel;
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            if (DataList.SelectedIndex != -1)
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+/*            if (DataList.SelectedIndex != -1)
             {
                 viewModel.DeleteEntry();
-            }
+            }*/
         }
 
 
