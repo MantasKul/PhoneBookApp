@@ -21,8 +21,6 @@ namespace PhoneBookApp.Models
         SqlDataAdapter adapter;
         DataSet? ds;
         private static ObservableCollection<Contact> contacts { get; set; }
-        public Contact selectedContact { get; set; }
-        public string txtSelectedItem { get; set; }
 
         public ObservableCollection<Contact> GetContacts()
         {
@@ -57,7 +55,7 @@ namespace PhoneBookApp.Models
             return contacts;
         }
 
-        public void DeleteContact()
+        public void DeleteContact(Contact selectedContact)
         {
             // Reoving row from Database
             try
