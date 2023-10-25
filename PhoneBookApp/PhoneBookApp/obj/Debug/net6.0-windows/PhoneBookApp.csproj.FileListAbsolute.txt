@@ -29,3 +29,5 @@ C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\bin\Debug\
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\PhoneBookApp.csproj.CopyComplete
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\Views\AddContact.g.cs
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\Views\AddContact.baml
+C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\Views\EditContact.g.cs
+C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Debug\net6.0-windows\Views\EditContact.baml

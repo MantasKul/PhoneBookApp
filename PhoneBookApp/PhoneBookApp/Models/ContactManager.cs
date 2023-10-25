@@ -110,6 +110,43 @@ namespace PhoneBookApp.Models
             }
         }
 
+        public void EditContact(Contact newContact)
+        {
+            int i = 0;
+            foreach (Contact c in contacts)
+            {
+                if (c.ID == newContact.ID)
+                {
+                    contacts[i] = newContact;
+                    break;
+                }
+                i++;
+            }
+
+            try
+            {
+                con = new SqlConnection(connectionString);
+                con.Open();
+
+                cmd = new SqlCommand("UpdateRowByID", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = newContact.ID;
+                cmd.Parameters.Add("@FullName", SqlDbType.VarChar).Value = newContact.Name;
+                cmd.Parameters.Add("@PhoneNo", SqlDbType.VarChar).Value = newContact.PhoneNo;
+                cmd.Parameters.Add("@BirthDate", SqlDbType.Date).Value = newContact.BirthDate;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+            }
+        }
+
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;

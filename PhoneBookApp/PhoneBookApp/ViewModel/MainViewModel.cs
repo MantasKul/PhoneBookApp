@@ -18,6 +18,7 @@ namespace PhoneBookApp.ViewModel
         public ObservableCollection<Contact> contacts { get; set; }
         public Contact selectedContact { get; set; }
         public ICommand ShowAddWindowCommand { get; set; }
+        public ICommand ShowEditWindowCommand { get; set; }
 
         private ContactManager contactManager { get; set; }
 
@@ -25,7 +26,8 @@ namespace PhoneBookApp.ViewModel
         {
             contactManager = new ContactManager();
             contacts = contactManager.GetContacts();
-            ShowAddWindowCommand = new RelayCommand(ShowWindow, CanShowWindow);
+            ShowAddWindowCommand = new RelayCommand(ShowAddWindow, CanShowAddWindow);
+            ShowEditWindowCommand = new RelayCommand(ShowEdiWindow, CanShowEditWindow);
         }
 
         public void DeleteContact()
@@ -33,15 +35,26 @@ namespace PhoneBookApp.ViewModel
             contactManager.DeleteContact(selectedContact);
         }
 
-        private bool CanShowWindow(object obj)
+        private bool CanShowAddWindow(object obj)
         {
             return true;
         }
 
-        private void ShowWindow(object obj)
+        private void ShowAddWindow(object obj)
         {
             AddContact addContactWindow = new AddContact();
             addContactWindow.Show();
+        }
+
+        private bool CanShowEditWindow(object obj)
+        {
+            return true;
+        }
+
+        private void ShowEdiWindow(object obj)
+        {
+            EditContact editContactWindow = new EditContact(selectedContact);
+            editContactWindow.Show();
         }
     }
 }

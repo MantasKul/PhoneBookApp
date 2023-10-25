@@ -30,8 +30,8 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="Add" Click="AddButton_Click" Command="{Binding ShowAddWindowCommand}"/>
-            <Button Grid.Column="1" Content="Edit"/>
+            <Button Grid.Column="0" Content="Add" Command="{Binding ShowAddWindowCommand}"/>
+            <Button Grid.Column="1" Content="Edit" Command="{Binding ShowEditWindowCommand}" CommandParameter="{Binding selectedContact}"/>
             <Button Grid.Column="2" Content="Delete" Click="DeleteButton_Click"/>
         </Grid>
     </Grid>

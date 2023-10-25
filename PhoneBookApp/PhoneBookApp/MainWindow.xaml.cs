@@ -1,4 +1,5 @@
 ﻿using PhoneBookApp.ViewModel;
+using PhoneBookApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -34,11 +35,6 @@ namespace PhoneBookApp
                         this.DataContext = viewModel;*/
             _mainViewModel = new MainViewModel();
             DataContext = _mainViewModel;           
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

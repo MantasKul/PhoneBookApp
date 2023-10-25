@@ -26,5 +26,10 @@ namespace PhoneBookApp.Views
             AddContactViewModel addContactViewModel = new AddContactViewModel();
             this.DataContext = addContactViewModel;
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
