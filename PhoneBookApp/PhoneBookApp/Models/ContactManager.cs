@@ -21,6 +21,7 @@ namespace PhoneBookApp.Models
         SqlDataAdapter adapter;
         DataSet? ds;
         private static ObservableCollection<Contact> contacts { get; set; }
+        private static Contact newContact;
 
         public ObservableCollection<Contact> GetContacts()
         {
@@ -57,7 +58,7 @@ namespace PhoneBookApp.Models
 
         public void DeleteContact(Contact selectedContact)
         {
-            // Reoving row from Database
+            // Removing row from Database
             try
             {
                 con = new SqlConnection(connectionString);
@@ -74,14 +75,39 @@ namespace PhoneBookApp.Models
             }
             finally
             {
-                ds = null;
-                adapter.Dispose();
                 con.Close();
                 con.Dispose();
             }
 
             // Removing row from the data grid
             contacts.Remove(contacts.Where(i => i.ID == selectedContact.ID).Single());
+        }
+
+        public void AddContact(Contact newContact)
+        {
+            contacts.Add(newContact);
+
+            try
+            {
+                con = new SqlConnection(connectionString);
+                con.Open();
+
+                cmd = new SqlCommand("InsertRow", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@FullName", SqlDbType.VarChar).Value = newContact.Name;
+                cmd.Parameters.Add("@PhoneNo", SqlDbType.VarChar).Value = newContact.PhoneNo;
+                cmd.Parameters.Add("@BirthDate", SqlDbType.Date).Value = newContact.BirthDate;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+            }
         }
 
         #region INotifyPropertyChanged Members

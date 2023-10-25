@@ -24,7 +24,7 @@ namespace PhoneBookApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainViewModel mainViewModel;
+        private MainViewModel _mainViewModel;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,20 +32,20 @@ namespace PhoneBookApp
                         this.DataContext = mainViewModel;*/
             /*            viewModel = new ContactsViewModel();
                         this.DataContext = viewModel;*/
-            mainViewModel = new MainViewModel();
-            DataContext = mainViewModel;           
+            _mainViewModel = new MainViewModel();
+            DataContext = _mainViewModel;           
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataList.SelectedIndex != -1)
             {
-                mainViewModel.DeleteContact();
+                _mainViewModel.DeleteContact();
             }
         }
     }
