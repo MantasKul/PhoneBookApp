@@ -39,3 +39,7 @@ To launch this application you can follow these steps:
 5. Compile the code using your preferred IDE/method
 
 In the future there will be a built application that should not require compiling and require only setting up MS SQL and the Server Name should be changed easily (a JSON/text config file or something similar).
+
+# Plans
+
+Future plans for this project involve writing test plans and cases for manual testing, automated tests, code quality improvement
