@@ -46,6 +46,7 @@ namespace PhoneBookApp.ViewModel
             addContactWindow.Show();
         }
 
+        // Change to be true only if there's something selected in the gridview, otherwise shouldn't allow to open edit window
         private bool CanShowEditWindow(object obj)
         {
             return true;
