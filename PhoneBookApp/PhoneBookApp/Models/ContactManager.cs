@@ -38,7 +38,10 @@ namespace PhoneBookApp.Models
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    contacts.Add(new Contact { ID = Convert.ToInt32(dr[0].ToString()), Name = dr[1].ToString(), PhoneNo = dr[2].ToString(), BirthDate = Convert.ToDateTime(dr[3].ToString()) });
+                    contacts.Add(new Contact {  ID = Convert.ToInt32(dr[0].ToString()), 
+                                                Name = dr[1].ToString(), 
+                                                PhoneNo = dr[2].ToString(), 
+                                                BirthDate = Convert.ToDateTime(dr[3].ToString()) });
                 }
             }
             catch (Exception e)
