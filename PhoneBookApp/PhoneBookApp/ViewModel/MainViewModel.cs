@@ -9,6 +9,7 @@ using PhoneBookApp.Views;
 using System.Windows;
 using System.Windows.Input;
 using PhoneBookApp.Commands;
+using System.ComponentModel;
 
 namespace PhoneBookApp.ViewModel
 {

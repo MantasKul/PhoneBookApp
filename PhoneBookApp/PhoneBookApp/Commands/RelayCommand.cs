@@ -15,7 +15,6 @@ namespace PhoneBookApp.Commands
         private Action<object> _Excute { get; set; }
         private Predicate<object> _CanExcute { get; set; }
 
-
         public RelayCommand(Action<object> ExcuteMethod, Predicate<object> CanExcuteMethod)
         {
 
@@ -23,8 +22,6 @@ namespace PhoneBookApp.Commands
             _CanExcute = CanExcuteMethod;
 
         }
-
-
 
         public bool CanExecute(object? parameter)
         {

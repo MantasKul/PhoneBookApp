@@ -13,7 +13,7 @@ using System.Configuration;
 namespace PhoneBookApp.Models
 {
     
-    public class ContactManager : INotifyPropertyChanged
+    public class ContactManager
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
         SqlConnection con;
@@ -149,18 +149,5 @@ namespace PhoneBookApp.Models
                 con.Dispose();
             }
         }
-
-        #region INotifyPropertyChanged Members
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-        #endregion
     }
 }
