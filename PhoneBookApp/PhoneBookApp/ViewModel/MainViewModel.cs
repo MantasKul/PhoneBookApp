@@ -20,6 +20,7 @@ namespace PhoneBookApp.ViewModel
         //public Contact selectedContact { get; set; }
         public AddContactCommand addContactCommand { get; private set; }
         public EditContactCommand editContactCommand { get; private set; }
+        public DeleteContactCommand deleteContactCommand { get; private set; }
         // to be remove ICommand varaibles
         //public ICommand ShowAddWindowCommand { get; set; }
         //public ICommand ShowEditWindowCommand { get; set; }
@@ -32,6 +33,7 @@ namespace PhoneBookApp.ViewModel
             contacts = contactManager.GetContacts();
             addContactCommand = new AddContactCommand(OpenAddContactWindow);
             editContactCommand = new EditContactCommand(OpenEditContactWindow);
+            deleteContactCommand = new DeleteContactCommand(DeleteContact);
         }
 
         public void OpenAddContactWindow()
@@ -46,9 +48,9 @@ namespace PhoneBookApp.ViewModel
             editContactWindow.Show();
         }
 
-        public void DeleteContact()
+        public void DeleteContact(Contact selectedContact)
         {
-            //contactManager.DeleteContact(selectedContact);
+            contactManager.DeleteContact(selectedContact);
         }
     }
 }

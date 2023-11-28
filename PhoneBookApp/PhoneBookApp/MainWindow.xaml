@@ -37,7 +37,7 @@
 
             <Button Grid.Column="0" Content="Add" Command="{Binding addContactCommand}"/>
             <Button Grid.Column="1" Content="Edit" Command="{Binding editContactCommand}" CommandParameter="{Binding ElementName=DataList, Path=SelectedItem}"/>
-            <Button Grid.Column="2" Content="Delete" Click="DeleteButton_Click"/>
+            <Button Grid.Column="2" Content="Delete" Command="{Binding deleteContactCommand}" CommandParameter="{Binding ElementName=DataList, Path=SelectedItem}"/>
         </Grid>
     </Grid>
 </Window>

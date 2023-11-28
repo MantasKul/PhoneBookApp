@@ -36,13 +36,5 @@ namespace PhoneBookApp
             _mainViewModel = new MainViewModel();
             DataContext = _mainViewModel;           
         }
-
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataList.SelectedIndex != -1)
-            {
-                _mainViewModel.DeleteContact();
-            }
-        }
     }
 }
