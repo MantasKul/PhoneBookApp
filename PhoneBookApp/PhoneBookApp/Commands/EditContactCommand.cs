@@ -8,27 +8,24 @@ using System.Windows.Input;
 
 namespace PhoneBookApp.Commands
 {
-    public class RelayCommand : ICommand
+    public class EditContactCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
+        private Action<Contact> _Execute;
 
-        private Action<object> _Excute { get; set; }
-        private Predicate<object> _CanExcute { get; set; }
-
-        public RelayCommand(Action<object> ExcuteMethod, Predicate<object> CanExcuteMethod)
+        public EditContactCommand(Action<Contact> execute)
         {
-            _Excute = ExcuteMethod;
-            _CanExcute = CanExcuteMethod;
+            _Execute = execute;
         }
 
         public bool CanExecute(object? parameter)
         {
-            return _CanExcute(parameter);
+            return true;
         }
 
         public void Execute(object? parameter)
         {
-            _Excute(parameter);
+            _Execute.Invoke(parameter as Contact);
         }
     }
 }

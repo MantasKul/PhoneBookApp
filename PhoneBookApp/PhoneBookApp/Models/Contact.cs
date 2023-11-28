@@ -13,7 +13,5 @@ namespace PhoneBookApp.Models
         public string Name { get; set; }
         public string PhoneNo { get; set; }
         public DateTime BirthDate { get; set; }
-
-        //public Contact() { }
     }
 }
