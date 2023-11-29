@@ -21,9 +21,6 @@ namespace PhoneBookApp.ViewModel
         public AddContactCommand addContactCommand { get; private set; }
         public EditContactCommand editContactCommand { get; private set; }
         public DeleteContactCommand deleteContactCommand { get; private set; }
-        // to be remove ICommand varaibles
-        //public ICommand ShowAddWindowCommand { get; set; }
-        //public ICommand ShowEditWindowCommand { get; set; }
 
         private ContactManager contactManager { get; set; }
 
@@ -44,13 +41,22 @@ namespace PhoneBookApp.ViewModel
         
         public void OpenEditContactWindow(Contact selectedContact)
         {
-            EditContact editContactWindow = new EditContact(selectedContact);
-            editContactWindow.Show();
+            if (selectedContact != null)
+            {
+                EditContact editContactWindow = new EditContact(selectedContact);
+                editContactWindow.Show();
+            } else
+            {
+                MessageBox.Show("Please select a row to edit");
+            }
         }
 
         public void DeleteContact(Contact selectedContact)
         {
-            contactManager.DeleteContact(selectedContact);
+            if (selectedContact != null)
+                contactManager.DeleteContact(selectedContact);
+            else
+                MessageBox.Show("Please select a row to delete");
         }
     }
 }
