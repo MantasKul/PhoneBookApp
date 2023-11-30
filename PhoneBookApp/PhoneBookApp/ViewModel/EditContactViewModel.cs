@@ -15,7 +15,8 @@ namespace PhoneBookApp.ViewModel
         public string Name { get; set; }
         public string PhoneNo { get; set; }
         public DateTime BirthDate { get; set; }
-        public ICommand EditContactCommand { get; set; }
+        public EditCommand editCommand { get; private set; }
+
         private int ID;
 
         private ContactManager _contactManager;
@@ -27,12 +28,7 @@ namespace PhoneBookApp.ViewModel
             this.PhoneNo = contactInfo.PhoneNo;
             this.BirthDate = contactInfo.BirthDate;
             _contactManager = new ContactManager();
-            EditContactCommand = new RelayCommand(EditContact, CanEditContact);
-        }
-
-        private bool CanEditContact(object obj)
-        {
-            return true;
+            editCommand = new EditCommand(EditContact);
         }
 
         private void EditContact(object obj)

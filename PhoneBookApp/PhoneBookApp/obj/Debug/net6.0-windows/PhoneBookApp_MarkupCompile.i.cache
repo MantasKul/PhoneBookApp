@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\App.xaml
 31938107596
 
-18286575233
+19666356991
 195351875588
 MainWindow.xaml;Views\AddContact.xaml;Views\EditContact.xaml;
 
-False
+True
 
