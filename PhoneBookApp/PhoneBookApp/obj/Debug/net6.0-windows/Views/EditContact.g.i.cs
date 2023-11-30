@@ -53,7 +53,7 @@ namespace PhoneBookApp.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PhoneBookApp;component/views/editcontact.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PhoneBookApp;V1.0.0.0;component/views/editcontact.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EditContact.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
