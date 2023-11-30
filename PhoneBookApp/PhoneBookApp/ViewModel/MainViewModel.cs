@@ -17,7 +17,6 @@ namespace PhoneBookApp.ViewModel
     public class MainViewModel
     {
         public ObservableCollection<Contact> contacts { get; set; }
-        //public Contact selectedContact { get; set; }
         public AddContactCommand addContactCommand { get; private set; }
         public EditContactCommand editContactCommand { get; private set; }
         public DeleteContactCommand deleteContactCommand { get; private set; }

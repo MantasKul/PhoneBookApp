@@ -16,19 +16,14 @@ namespace PhoneBookApp.ViewModel
         public string Name { get; set; }
         public string PhoneNo { get; set; }
         public DateTime BirthDate { get; set; }
-        public ICommand AddContactCommand { get; set; }
+        public AddCommand addCommand { get; private set; }
 
         private ContactManager _contactManager;
 
         public AddContactViewModel()
         {
             _contactManager = new ContactManager();
-            AddContactCommand = new RelayCommand(AddContact, CanAddContact);
-        }
-
-        private bool CanAddContact(object obj)
-        {
-            return true;
+            addCommand = new AddCommand(AddContact);
         }
 
         private void AddContact(object obj)
