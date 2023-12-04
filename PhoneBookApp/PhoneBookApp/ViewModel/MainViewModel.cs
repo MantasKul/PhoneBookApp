@@ -17,9 +17,9 @@ namespace PhoneBookApp.ViewModel
     public class MainViewModel
     {
         public ObservableCollection<Contact> contacts { get; set; }
-        public AddContactCommand addContactCommand { get; private set; }
-        public EditContactCommand editContactCommand { get; private set; }
-        public DeleteContactCommand deleteContactCommand { get; private set; }
+        public RelayCommand addContactWindowCommand { get; private set; }
+        public RelayCommand editContactWindowCommand { get; private set; }
+        public RelayCommand deleteContactCommand { get; private set; }
 
         private ContactManager contactManager { get; set; }
 
@@ -27,35 +27,37 @@ namespace PhoneBookApp.ViewModel
         {
             contactManager = new ContactManager();
             contacts = contactManager.GetContacts();
-            addContactCommand = new AddContactCommand(OpenAddContactWindow);
-            editContactCommand = new EditContactCommand(OpenEditContactWindow);
-            deleteContactCommand = new DeleteContactCommand(DeleteContact);
+            addContactWindowCommand = new RelayCommand(OpenAddContactWindow);
+            editContactWindowCommand = new RelayCommand(OpenEditContactWindow, CanOpenEditContactWindow);
+            deleteContactCommand = new RelayCommand(DeleteContact, CanDeleteContact);
         }
 
-        public void OpenAddContactWindow()
+        public void OpenAddContactWindow(object placeHolder)
         {
             AddContact addContactWindow = new AddContact();
             addContactWindow.Show();
         }
-        
-        public void OpenEditContactWindow(Contact selectedContact)
+
+        public bool CanOpenEditContactWindow(object selectedContact)
         {
-            if (selectedContact != null)
-            {
-                EditContact editContactWindow = new EditContact(selectedContact);
-                editContactWindow.Show();
-            } else
-            {
-                MessageBox.Show("Please select a row to edit");
-            }
+            return selectedContact == null ? false : true;
         }
 
-        public void DeleteContact(Contact selectedContact)
+
+        public void OpenEditContactWindow(object selectedContact)
         {
-            if (selectedContact != null)
-                contactManager.DeleteContact(selectedContact);
-            else
-                MessageBox.Show("Please select a row to delete");
+            EditContact editContactWindow = new EditContact((Contact)selectedContact);
+            editContactWindow.Show();
+        }
+
+        public bool CanDeleteContact(object selectedContact)
+        {
+            return selectedContact == null ? false : true;
+        }
+
+        public void DeleteContact(object selectedContact)
+        {
+            contactManager.DeleteContact((Contact)selectedContact);
         }
     }
 }

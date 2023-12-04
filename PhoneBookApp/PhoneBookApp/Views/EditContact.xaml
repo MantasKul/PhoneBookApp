@@ -28,7 +28,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Birth Date" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding BirthDate}" Width="120" Height="30"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="Edit" Command="{Binding editCommand}"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Edit" Command="{Binding editContactCommand}"/>
         <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Click="CancelButton_Click"/>
     </Grid>
 </Window>

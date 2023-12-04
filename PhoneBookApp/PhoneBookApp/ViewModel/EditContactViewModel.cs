@@ -15,7 +15,7 @@ namespace PhoneBookApp.ViewModel
         public string Name { get; set; }
         public string PhoneNo { get; set; }
         public DateTime BirthDate { get; set; }
-        public EditCommand editCommand { get; private set; }
+        public RelayCommand editContactCommand { get; private set; }
 
         private int ID;
 
@@ -28,10 +28,10 @@ namespace PhoneBookApp.ViewModel
             this.PhoneNo = contactInfo.PhoneNo;
             this.BirthDate = contactInfo.BirthDate;
             _contactManager = new ContactManager();
-            editCommand = new EditCommand(EditContact);
+            editContactCommand = new RelayCommand(EditContact);
         }
 
-        private void EditContact(object obj)
+        private void EditContact(object placeHolder)
         {
             _contactManager.EditContact(new Contact() { ID = ID, Name = Name, PhoneNo = PhoneNo, BirthDate = BirthDate });
         }
