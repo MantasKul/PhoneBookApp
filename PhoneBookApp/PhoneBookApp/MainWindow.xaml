@@ -23,7 +23,7 @@
                     <DataGridTextColumn Header="ID" Visibility="Hidden" Binding="{Binding ID}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Full Name" Width="1*" Binding="{Binding Name}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Phone No." Width="1*" Binding="{Binding PhoneNo}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Birth Date" Width="1*" Binding="{Binding BirthDate, StringFormat=\{0:MM-dd-yy\}}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Birth Date" Width="1*" Binding="{Binding BirthDate, StringFormat=\{0:yy-MM-dd\}}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
