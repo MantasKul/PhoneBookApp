@@ -29,10 +29,6 @@ namespace PhoneBookApp
         public MainWindow()
         {
             InitializeComponent();
-            /*            MainViewModel mainViewModel = new MainViewModel();
-                        this.DataContext = mainViewModel;*/
-            /*            viewModel = new ContactsViewModel();
-                        this.DataContext = viewModel;*/
             _mainViewModel = new MainViewModel();
             DataContext = _mainViewModel;           
         }

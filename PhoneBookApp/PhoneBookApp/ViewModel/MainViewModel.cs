@@ -35,6 +35,7 @@ namespace PhoneBookApp.ViewModel
         public void OpenAddContactWindow(object placeHolder)
         {
             AddContact addContactWindow = new AddContact();
+            addContactWindow.Owner = Application.Current.MainWindow;
             addContactWindow.Show();
         }
 
@@ -47,6 +48,7 @@ namespace PhoneBookApp.ViewModel
         public void OpenEditContactWindow(object selectedContact)
         {
             EditContact editContactWindow = new EditContact((Contact)selectedContact);
+            editContactWindow.Owner = Application.Current.MainWindow;
             editContactWindow.Show();
         }
 
