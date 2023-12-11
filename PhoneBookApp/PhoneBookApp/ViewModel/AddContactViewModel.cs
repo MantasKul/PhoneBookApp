@@ -23,6 +23,7 @@ namespace PhoneBookApp.ViewModel
         public AddContactViewModel()
         {
             _contactManager = new ContactManager();
+            BirthDate = DateTime.Today;
             addContactCommand = new RelayCommand(AddContact);
         }
 

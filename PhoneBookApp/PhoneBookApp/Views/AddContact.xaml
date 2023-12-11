@@ -26,7 +26,7 @@
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNo}" TextWrapping="Wrap" Width="120" Height="30"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Birth Date" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding BirthDate}" Width="120" Height="30"/>
+        <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding BirthDate}" Width="120" Height="30" FirstDayOfWeek="Monday"/>
 
         <Button Grid.Row="3" Grid.Column="0" Content="Add" Command="{Binding addContactCommand}"/>
         <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Click="CancelButton_Click"/>
