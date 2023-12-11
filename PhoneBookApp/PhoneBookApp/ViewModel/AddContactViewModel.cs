@@ -34,11 +34,15 @@ namespace PhoneBookApp.ViewModel
 
         private void AddContact(object placeHolder)
         {
-            
+
             if (Name == null || PhoneNo == null || Name == "" || PhoneNo == "")
             {
-                MessageBox.Show("Name and Phone No. fields must be filled in", "Empty fields detected");
-            }else
+                MessageBox.Show("Name and/or Phone No. fields must be filled in", "Empty fields detected");
+            }
+            else if (!Regex.IsMatch(PhoneNo, PhoneNoRegex))
+            {
+                MessageBox.Show("Please enter a valid Phone No.", "Invalid Phone No.");
+            }else           
             {
                 _contactManager.AddContact(new Contact() { Name = Name, PhoneNo = PhoneNo, BirthDate = BirthDate });
             }
