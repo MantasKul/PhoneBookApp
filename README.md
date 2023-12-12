@@ -40,6 +40,6 @@ To launch this application you can follow these steps:
 
 In the future there will be a built application that should not require compiling and require only setting up MS SQL and the Server Name should be changed easily (a JSON/text config file or something similar).
 
-# Plans
+# Test Related Files
 
-Future plans for this project involve writing test plans and cases for manual testing, automated tests, code quality improvement
+Everything related to quality assurance. Simple test plans describing what and how will the application be tested. The test plans are divided into three main parts: Main Window, Adding a contact, and Editing a contact. The folder also includes test cases.
