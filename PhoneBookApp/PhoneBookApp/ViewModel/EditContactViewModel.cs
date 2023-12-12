@@ -20,7 +20,7 @@ namespace PhoneBookApp.ViewModel
 
         private int ID;
         private ContactManager _contactManager;
-        private String PhoneNoRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s\\./0-9]*$";
+        private string PhoneNoRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s\\./0-9]*$";
 
         public EditContactViewModel(Contact contactInfo)
         {
@@ -32,7 +32,7 @@ namespace PhoneBookApp.ViewModel
             editContactCommand = new RelayCommand(EditContact);
         }
 
-        private void EditContact(object placeHolder)
+        private void EditContact(object window)
         {
             if (Name == null || PhoneNo == null || Name == "" || PhoneNo == "")
             {
@@ -43,7 +43,11 @@ namespace PhoneBookApp.ViewModel
                 MessageBox.Show("Please enter a valid Phone No.", "Invalid Phone No.");
             }
             else
+            {
                 _contactManager.EditContact(new Contact() { ID = ID, Name = Name, PhoneNo = PhoneNo, BirthDate = BirthDate });
+                Window win = window as Window;
+                win.Close();
+            }
         }
     }
 }

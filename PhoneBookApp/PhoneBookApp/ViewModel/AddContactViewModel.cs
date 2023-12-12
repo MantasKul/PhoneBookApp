@@ -16,12 +16,12 @@ namespace PhoneBookApp.ViewModel
     public class AddContactViewModel
     {
         public string Name { get; set; }
-        public String PhoneNo { get; set; }
+        public string PhoneNo { get; set; }
         public DateTime BirthDate { get; set; }
         public RelayCommand addContactCommand { get; private set; }
 
         private ContactManager _contactManager;
-        private String PhoneNoRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s\\./0-9]*$";
+        private string PhoneNoRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s\\./0-9]*$";
 
         public AddContactViewModel()
         {
@@ -32,7 +32,7 @@ namespace PhoneBookApp.ViewModel
         }
 
 
-        private void AddContact(object placeHolder)
+        private void AddContact(object window)
         {
 
             if (Name == null || PhoneNo == null || Name == "" || PhoneNo == "")
@@ -45,6 +45,8 @@ namespace PhoneBookApp.ViewModel
             }else           
             {
                 _contactManager.AddContact(new Contact() { Name = Name, PhoneNo = PhoneNo, BirthDate = BirthDate });
+                Window win = window as Window;
+                win.Close();
             }
         }
     }

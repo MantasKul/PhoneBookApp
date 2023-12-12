@@ -1,4 +1,5 @@
 ﻿<Window x:Class="PhoneBookApp.Views.AddContact"
+        x:Name="AddWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -29,7 +30,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Birth Date" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding BirthDate}" Width="120" Height="30" FirstDayOfWeek="Monday"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="Add" Command="{Binding addContactCommand}"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Add" Command="{Binding addContactCommand}" CommandParameter="{Binding ElementName=AddWindow, Mode=OneWay}"/>
         <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Click="CancelButton_Click"/>
     </Grid>
 </Window>
