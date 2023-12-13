@@ -1,0 +1,1 @@
+Data Source = DESKTOP-KGQ3EPM; Initial Catalog = PhonebookDB; Integrated Security = true; TrustServerCertificate = true;

@@ -21,7 +21,7 @@ namespace PhoneBookApp.ViewModel
         public RelayCommand addContactCommand { get; private set; }
 
         private ContactManager _contactManager;
-        private string PhoneNoRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s\\./0-9]*$";
+        private string PhoneNoRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s\\./0-9]*$"; // Used to check Phone No format
 
         public AddContactViewModel()
         {
@@ -34,11 +34,12 @@ namespace PhoneBookApp.ViewModel
 
         private void AddContact(object window)
         {
-
+            // Ensuring that the input fields are not empty/null
             if (Name == null || PhoneNo == null || Name == "" || PhoneNo == "")
             {
                 MessageBox.Show("Name and/or Phone No. fields must be filled in", "Empty fields detected");
             }
+            // Ensuring that the Phone No format is acceptable
             else if (!Regex.IsMatch(PhoneNo, PhoneNoRegex))
             {
                 MessageBox.Show("Please enter a valid Phone No.", "Invalid Phone No.");

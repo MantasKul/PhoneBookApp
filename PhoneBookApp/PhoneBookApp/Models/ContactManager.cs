@@ -16,7 +16,7 @@ namespace PhoneBookApp.Models
     
     public class ContactManager
     {
-        static string connectionString = "Data Source = " + File.ReadAllText("ServerName.txt") + "; Initial Catalog = PhonebookDB; Integrated Security = true; TrustServerCertificate = true;"; // ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
+        static string connectionString = File.ReadAllText("ServerConnectionString.txt"); // ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
         private SqlConnection con;
         private SqlCommand cmd;
         private SqlDataAdapter adapter;
@@ -115,6 +115,7 @@ namespace PhoneBookApp.Models
 
         public void EditContact(Contact newContact)
         {
+            // Editing row in the Data List
             int i = 0;
             foreach (Contact c in contacts)
             {
@@ -126,6 +127,7 @@ namespace PhoneBookApp.Models
                 i++;
             }
 
+            // Editing row in the database
             try
             {
                 con = new SqlConnection(connectionString);
