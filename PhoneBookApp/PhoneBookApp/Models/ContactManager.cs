@@ -9,19 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Configuration;
+using System.IO;
 
 namespace PhoneBookApp.Models
 {
     
     public class ContactManager
     {
-        static string connectionString = ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter adapter;
-        DataSet? ds;
+        static string connectionString = "Data Source = " + File.ReadAllText("ServerName.txt") + "; Initial Catalog = PhonebookDB; Integrated Security = true; TrustServerCertificate = true;"; // ConfigurationManager.ConnectionStrings["ServerCon"].ConnectionString;
+        private SqlConnection con;
+        private SqlCommand cmd;
+        private SqlDataAdapter adapter;
+        private DataSet? ds;
         private static ObservableCollection<Contact> contacts { get; set; }
-        private static Contact newContact;
 
         public ObservableCollection<Contact> GetContacts()
         {

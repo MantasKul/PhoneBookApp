@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace PhoneBookApp
         private MainViewModel _mainViewModel;
         public MainWindow()
         {
+
             InitializeComponent();
             _mainViewModel = new MainViewModel();
             DataContext = _mainViewModel;           
