@@ -9,7 +9,6 @@ namespace PhoneBookApp.Commands
 {
     public class RelayCommand : ICommand
     {
-        private Action _command;
         private Action<object> _Execute;
         private Predicate<object> _Predicate;
 
