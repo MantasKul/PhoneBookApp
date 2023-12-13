@@ -8,6 +8,21 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         Title="Edit Contact" Height="300" Width="300">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <TextBox x:Name="PART_TextBox"
+                                 Text="{Binding Path=SelectedDate, StringFormat='yyyy MM dd', 
+                                 RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" BorderBrush="{x:Null}" Margin="-3,-2,-3,-8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -22,10 +37,10 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Full Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextWrapping="Wrap" Width="120" Height="30"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextWrapping="Wrap" Width="120" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Phone No." VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNo}" TextWrapping="Wrap" Width="120" Height="30"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNo}" TextWrapping="Wrap" Width="120" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Birth Date" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding BirthDate}" Width="120" Height="30"/>
