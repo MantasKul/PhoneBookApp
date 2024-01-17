@@ -17,7 +17,7 @@ namespace PhoneBookApp.ViewModel
     public class MainViewModel
     {
         public ObservableCollection<Contact> contacts { get; set; }
-        public RelayCommand addContactWindowCommand { get; private set; }
+        public NoArgsRelayCommand addContactWindowCommand { get; private set; }
         public RelayCommand editContactWindowCommand { get; private set; }
         public RelayCommand deleteContactCommand { get; private set; }
 
@@ -27,12 +27,13 @@ namespace PhoneBookApp.ViewModel
         {
             contactManager = new ContactManager();
             contacts = contactManager.GetContacts();
-            addContactWindowCommand = new RelayCommand(OpenAddContactWindow);
+            addContactWindowCommand = new NoArgsRelayCommand(OpenAddContactWindow);
             editContactWindowCommand = new RelayCommand(OpenEditContactWindow, CanOpenEditContactWindow);
             deleteContactCommand = new RelayCommand(DeleteContact, CanDeleteContact);
         }
 
-        public void OpenAddContactWindow(object placeHolder)
+        // argument should will be removed, new command class will be created for this
+        public void OpenAddContactWindow()
         {
             AddContact addContactWindow = new AddContact();
             addContactWindow.Owner = Application.Current.MainWindow;

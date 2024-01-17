@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "an/4t9snoxZ2rYpEjyTJC9yLtZd3zBXsEioVJ6/P4x/TJaDnivhUXcIrivqwSjVf6P4k4lXG8UgaeYAkI/ewWg==",
+  "dgSpecHash": "niF+9RWSxOAdv8Nt3ktKnLPneSEn3bvYTwdqTpLPi0nJ1AF5BUB3tj0iTD+a2m3ITFsUPtb1D2MotjB4Euh3QQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mantas\\Desktop\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj",
+  "projectFilePath": "C:\\Users\\Mantas\\Desktop\\Programming\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mantas\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Mantas\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

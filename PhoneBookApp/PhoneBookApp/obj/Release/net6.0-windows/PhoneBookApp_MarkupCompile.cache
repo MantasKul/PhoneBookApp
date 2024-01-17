@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Release\net6.0-windows\
+C:\Users\Mantas\Desktop\Programming\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\obj\Release\net6.0-windows\
 PhoneBookApp
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\Mantas\Desktop\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\App.xaml
+C:\Users\Mantas\Desktop\Programming\CSharp\PhoneBookWPF\PhoneBookApp\PhoneBookApp\App.xaml
 31938107596
 
-12-842753124
+11-2140556073
 195351875588
 MainWindow.xaml;Views\AddContact.xaml;Views\EditContact.xaml;
 

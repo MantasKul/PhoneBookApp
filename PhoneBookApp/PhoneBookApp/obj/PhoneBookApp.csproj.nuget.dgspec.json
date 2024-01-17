@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mantas\\Desktop\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj": {}
+    "C:\\Users\\Mantas\\Desktop\\Programming\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mantas\\Desktop\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj": {
+    "C:\\Users\\Mantas\\Desktop\\Programming\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mantas\\Desktop\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj",
+        "projectUniqueName": "C:\\Users\\Mantas\\Desktop\\Programming\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj",
         "projectName": "PhoneBookApp",
-        "projectPath": "C:\\Users\\Mantas\\Desktop\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj",
+        "projectPath": "C:\\Users\\Mantas\\Desktop\\Programming\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\PhoneBookApp.csproj",
         "packagesPath": "C:\\Users\\Mantas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mantas\\Desktop\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\obj\\",
+        "outputPath": "C:\\Users\\Mantas\\Desktop\\Programming\\CSharp\\PhoneBookWPF\\PhoneBookApp\\PhoneBookApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PhoneBookApp",
+    "\\PhoneBookApp\\PhoneBookApp",
+    "\\PhoneBookApp\\PhoneBookApp\\Commands",
+    "\\PhoneBookApp\\PhoneBookApp\\Models",
+    "\\PhoneBookApp\\PhoneBookApp\\View",
+    "\\PhoneBookApp\\PhoneBookApp\\ViewModel",
+    "\\PhoneBookApp\\PhoneBookApp\\Views"
   ],
+  "SelectedNode": "\\PhoneBookApp\\PhoneBookApp\\Commands\\RelayCommand.cs",
   "PreviewInSolutionExplorer": false
 }
